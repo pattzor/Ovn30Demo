@@ -10,7 +10,7 @@
 namespace Ovn30Demo {
     
     
-    public partial class index {
+    public partial class Adress {
         
         /// <summary>
         /// form1 control.
@@ -22,48 +22,39 @@ namespace Ovn30Demo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// listBoxContacts control.
+        /// dropDownListContacts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox listBoxContacts;
+        protected global::System.Web.UI.WebControls.DropDownList dropDownListContacts;
         
         /// <summary>
-        /// textBoxFirstname control.
+        /// textBoxStreet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxFirstname;
+        protected global::System.Web.UI.WebControls.TextBox textBoxStreet;
         
         /// <summary>
-        /// textBoxLastname control.
+        /// textBoxCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxLastname;
+        protected global::System.Web.UI.WebControls.TextBox textBoxCity;
         
         /// <summary>
-        /// textBoxSSN control.
+        /// ButtonAddAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textBoxSSN;
-        
-        /// <summary>
-        /// ButtonAddContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddContact;
+        protected global::System.Web.UI.WebControls.Button ButtonAddAddress;
     }
 }
