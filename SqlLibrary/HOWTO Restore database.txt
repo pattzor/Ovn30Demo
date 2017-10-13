@@ -1,0 +1,16 @@
+﻿
+1. Högerklicka på Databases i SQL Management Studio, välj Restore Database
+
+2. Välj Device
+
+3. Klicka på prickarna till höger
+
+4. Backup media type ska vara File
+
+5. Klicka på Add
+
+6. Leta upp filen MussePigg.bak (ligger i SqlLibrary project katalog)
+
+7. Klicka på Ok.
+
+8. Voila!
