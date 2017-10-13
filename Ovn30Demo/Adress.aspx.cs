@@ -22,7 +22,7 @@ namespace Ovn30Demo
         {
             SQLStuff sqlStuff = new SQLStuff();
 
-            List<Contact> myContacts = sqlStuff.ReadAllContacts();
+            List<SqlLibrary.Contact> myContacts = sqlStuff.ReadAllContacts();
 
             dropDownListContacts.Items.Clear();
 

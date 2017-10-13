@@ -27,7 +27,7 @@ namespace Ovn30Demo
         {
             SQLStuff sqlStuff = new SQLStuff();
 
-            List<Contact> myContacts = sqlStuff.ReadAllContacts();
+            List<SqlLibrary.Contact> myContacts = sqlStuff.ReadAllContacts();
 
             listBoxContacts.Items.Clear();
 
@@ -50,7 +50,7 @@ namespace Ovn30Demo
 
                 try
                 {
-                    sqlStuff.CreateContact(new Contact(firstName, lastName, ssn));
+                    sqlStuff.CreateContact(new SqlLibrary.Contact(firstName, lastName, ssn));
 
                     textBoxFirstname.Text = "";
                     textBoxLastname.Text = "";
@@ -62,6 +62,45 @@ namespace Ovn30Demo
                 {
                     // Sparas till fil
                     // TODO
+                }
+            }
+        }
+
+        protected void ButtonUpdate_Click(object sender, EventArgs e)
+        {
+            if (listBoxContacts.SelectedIndex >= 0)
+            {
+                int id = int.Parse(listBoxContacts.SelectedValue);
+
+                if (id > 0)
+                {
+                    Response.Redirect("/contact.aspx?action=update&cid=" + id);
+                }
+            }
+        }
+
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            if (listBoxContacts.SelectedIndex >= 0)
+            {
+                int id = int.Parse(listBoxContacts.SelectedValue);
+
+                if (id > 0)
+                {
+                    Response.Redirect("/contact.aspx?action=delete&cid=" + id);
+                }
+            }
+        }
+
+        protected void ButtonCreate_Click(object sender, EventArgs e)
+        {
+            if (listBoxContacts.SelectedIndex >= 0)
+            {
+                int id = int.Parse(listBoxContacts.SelectedValue);
+
+                if (id > 0)
+                {
+                    Response.Redirect("/contact.aspx?action=create&cid=" + id);
                 }
             }
         }

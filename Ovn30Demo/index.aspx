@@ -9,6 +9,10 @@
     <div>
         <asp:ListBox ID="listBoxContacts" runat="server" AutoPostBack="True" Height="316px" Width="286px"></asp:ListBox>
     </div>
+    <asp:Button ID="ButtonUpdate" runat="server" Text="Update Contact" OnClick="ButtonUpdate_Click" />
+    <asp:Button ID="ButtonDelete" runat="server" Text="Delete Contact" OnClick="ButtonDelete_Click" />
+    <asp:Button ID="ButtonCreate" runat="server" Text="Create Contact" OnClick="ButtonCreate_Click" />
+
     <table style="width: 60%;">
         <tr>
             <td class="auto-style1">Firstname</td>

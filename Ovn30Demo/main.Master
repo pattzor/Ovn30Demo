@@ -1,16 +1,12 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="Ovn30Demo.main" %>
-
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
     <title></title>
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -27,8 +23,7 @@
     </nav>
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="main_content" runat="server">
-            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="main_content" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
 </body>
