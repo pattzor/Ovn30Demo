@@ -7,13 +7,14 @@
 
 <asp:Content ContentPlaceHolderID="main_content" runat="server">
     <div>
-        <asp:ListBox ID="listBoxContacts" runat="server" AutoPostBack="True" Height="511px" Width="352px"></asp:ListBox>
+        <asp:ListBox ID="listBoxContacts" runat="server" AutoPostBack="True" Height="316px" Width="286px"></asp:ListBox>
     </div>
     <table style="width: 60%;">
         <tr>
             <td class="auto-style1">Firstname</td>
             <td>
                 <asp:TextBox ID="textBoxFirstname" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textBoxFirstname" EnableClientScript="False" ErrorMessage="Please provide firstname"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -21,6 +22,7 @@
             <td class="auto-style1">Lastname</td>
             <td>
                 <asp:TextBox ID="textBoxLastname" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="textBoxLastname" EnableClientScript="False" ErrorMessage="Please provide lastname"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -28,6 +30,7 @@
             <td class="auto-style1">SSN</td>
             <td>
                 <asp:TextBox ID="textBoxSSN" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="textBoxSSN" EnableClientScript="False" ErrorMessage="Please provide SSN"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>

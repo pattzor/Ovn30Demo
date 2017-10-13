@@ -40,24 +40,26 @@ namespace Ovn30Demo
 
         protected void ButtonAddContact_Click(object sender, EventArgs e)
         {
-            string firstName = textBoxFirstname.Text;
-            string lastName = textBoxLastname.Text;
-            string ssn = textBoxSSN.Text;
-
-            SQLStuff sqlStuff = new SQLStuff();
-
-            try
+            if (IsValid)
             {
-                sqlStuff.CreateContact(new Contact(firstName, lastName, ssn));
+                string firstName = textBoxFirstname.Text;
+                string lastName = textBoxLastname.Text;
+                string ssn = textBoxSSN.Text;
 
-                LoadContacts();
+                SQLStuff sqlStuff = new SQLStuff();
+
+                try
+                {
+                    sqlStuff.CreateContact(new Contact(firstName, lastName, ssn));
+
+                    LoadContacts();
+                }
+                catch (Exception ex)
+                {
+                    // Sparas till fil
+                    // TODO
+                }
             }
-            catch (Exception ex)
-            {
-                // Sparas till fil
-                // TODO
-            }
-            
         }
     }
 }
