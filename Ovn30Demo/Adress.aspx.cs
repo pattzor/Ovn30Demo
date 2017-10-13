@@ -35,14 +35,17 @@ namespace Ovn30Demo
 
         protected void ButtonAddAddress_Click(object sender, EventArgs e)
         {
-            string street = textBoxStreet.Text;
-            string city = textBoxCity.Text;
+            if (IsValid)
+            {
+                string street = textBoxStreet.Text;
+                string city = textBoxCity.Text;
 
-            SQLStuff sqlStuff = new SQLStuff();
+                SQLStuff sqlStuff = new SQLStuff();
 
-            int cid = int.Parse(dropDownListContacts.SelectedValue);
+                int cid = int.Parse(dropDownListContacts.SelectedValue);
 
-            sqlStuff.AddAddressToContact(cid, new SqlLibrary.Adress(street,city));
+                sqlStuff.AddAddressToContact(cid, new SqlLibrary.Adress(street, city));
+            }
         }
     }
 }
