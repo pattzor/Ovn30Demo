@@ -14,7 +14,7 @@
             <td class="auto-style1">Firstname</td>
             <td>
                 <asp:TextBox ID="textBoxFirstname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textBoxFirstname" EnableClientScript="False" ErrorMessage="Please provide firstname"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textBoxFirstname" EnableClientScript="False" ErrorMessage="Please provide firstname" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -22,7 +22,7 @@
             <td class="auto-style1">Lastname</td>
             <td>
                 <asp:TextBox ID="textBoxLastname" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="textBoxLastname" EnableClientScript="False" ErrorMessage="Please provide lastname"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="textBoxLastname" EnableClientScript="False" ErrorMessage="Please provide lastname" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -30,7 +30,8 @@
             <td class="auto-style1">SSN</td>
             <td>
                 <asp:TextBox ID="textBoxSSN" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="textBoxSSN" EnableClientScript="False" ErrorMessage="Please provide SSN"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="textBoxSSN" EnableClientScript="False" ErrorMessage="Please provide ssn" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="textBoxSSN" EnableClientScript="False" ErrorMessage="SSN is not in the right format YYYYMMDD-XXXX" ForeColor="Red" ValidateRequestMode="Enabled" ValidationExpression="\d{8}-\d{4}"></asp:RegularExpressionValidator>
             </td>
             <td>&nbsp;</td>
         </tr>

@@ -52,6 +52,10 @@ namespace Ovn30Demo
                 {
                     sqlStuff.CreateContact(new Contact(firstName, lastName, ssn));
 
+                    textBoxFirstname.Text = "";
+                    textBoxLastname.Text = "";
+                    textBoxSSN.Text = "";
+
                     LoadContacts();
                 }
                 catch (Exception ex)
