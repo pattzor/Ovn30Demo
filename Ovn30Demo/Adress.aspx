@@ -13,14 +13,14 @@
         <tr>
             <td class="auto-style1">Type</td>
             <td class="auto-style2">
-                <asp:TextBox ID="textBoxType" runat="server" Width="274px"></asp:TextBox>
+                <asp:TextBox ID="textBoxType" runat="server" Width="270px"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style1">Street</td>
             <td class="auto-style2">
-                <asp:TextBox ID="textBoxStreet" runat="server" Width="274px"></asp:TextBox>
+                <asp:TextBox ID="textBoxStreet" runat="server" Width="270px"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>

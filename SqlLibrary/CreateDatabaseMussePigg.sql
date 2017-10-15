@@ -85,3 +85,6 @@ execute AddAddress 'Home', 'Björkvägen 2', 'Norrköping', @cid, @aid output
 
 execute AddContact 'Anna', 'Svensson', '19920712-1244', @cid output
 execute AddAddress 'Home', 'Björkvägen 2', 'Norrköping', @cid, @aid output
+
+execute AddContact 'Nisse', 'Hult', '19960101-1234', @cid output
+execute AddAddress 'Home', 'Bokgatan 12', 'Nyköping', @cid, @aid output
