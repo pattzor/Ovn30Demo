@@ -111,6 +111,38 @@ namespace SqlLibrary
             return result;
         }
 
+        public int DeleteContact(int cid)
+        {
+            int result = 0;
+
+            SqlConnection sqlConnection = new SqlConnection();
+
+            sqlConnection.ConnectionString = connString;
+
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("DeleteContact", sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlParameter paramCid = new SqlParameter("@cid", System.Data.SqlDbType.Int);
+                paramCid.Value = cid;
+                sqlCommand.Parameters.Add(paramCid);
+
+                result = sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+            return result;
+        }
         public int CreateContact(Contact contact)
         {
             int result = 0;

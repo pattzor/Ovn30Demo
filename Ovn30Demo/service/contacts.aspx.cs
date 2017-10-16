@@ -19,6 +19,24 @@ namespace Ovn30Demo.service
 
                 jsonLiteral.Text = JsonConvert.SerializeObject(sqlStuff.ReadAllContacts(), Formatting.Indented);
             }
+            else if(Request["deleteCID"] != null)
+            {
+                int cid = int.Parse(Request["deleteCID"].ToString());
+
+                SQLStuff sqlStuff = new SQLStuff();
+
+                int result = sqlStuff.DeleteContact(cid);
+
+                if(result == 0)
+                {
+                    jsonLiteral.Text = "error";
+                }
+                else
+                {
+                    jsonLiteral.Text = "ok";
+                }
+            }
+
         }
     }
 }

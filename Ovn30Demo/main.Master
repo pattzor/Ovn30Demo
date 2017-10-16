@@ -19,6 +19,7 @@
                 <li class="active"><a href="index.aspx">Home</a></li>
                 <li><a href="Adress.aspx">Adress</a></li>
                 <li><a href="session.aspx">Session</a></li>
+                <li><a href="ajax.aspx">AJAX</a></li>
             </ul>
         </div>
     </nav>

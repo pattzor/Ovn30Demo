@@ -12,6 +12,7 @@
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>SSN</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody id="myTableBody"></tbody>
