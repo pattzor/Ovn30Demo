@@ -1,0 +1,34 @@
+﻿.myDivTable {
+    display: table;
+    border: 1px solid #1C6EA4;
+    background-color: #EEEEEE;
+    width: 80%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.myDivTableRow {
+    display: table-row;
+}
+
+.myDivTable .myDivTableRow:nth-child(odd) {
+    background-color: #D0E4F5;
+}
+
+.myDivTableCell {
+    display: table-cell;
+    padding: 8px;
+}
+
+.myDivTableHeadRow {
+    display: table-row;
+    font-weight: bold;
+}
+
+.myDivTableHead {
+    display: table-header-group;
+}
+
+.myDivTableBody {
+    display: table-row-group;
+}

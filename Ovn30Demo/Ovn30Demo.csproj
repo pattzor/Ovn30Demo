@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ajax.aspx" />
+    <Content Include="ajax_div.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -78,6 +79,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index_new.aspx" />
     <Content Include="javascript\myJavaScript.js" />
+    <Content Include="javascript\myJavaScriptDIV.js" />
     <Content Include="main.Master" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -107,6 +109,7 @@
     <Content Include="index.aspx" />
     <Content Include="service\contacts.aspx" />
     <Content Include="session.aspx" />
+    <Content Include="style\myDivStyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +126,13 @@
     </Compile>
     <Compile Include="ajax.aspx.designer.cs">
       <DependentUpon>ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ajax_div.aspx.cs">
+      <DependentUpon>ajax_div.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajax_div.aspx.designer.cs">
+      <DependentUpon>ajax_div.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
