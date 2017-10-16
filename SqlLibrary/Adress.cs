@@ -9,13 +9,15 @@ namespace SqlLibrary
     public class Adress
     {
         public int ID { get; set; }
-        public string street;
-        public string city;
+        public string Type { get; set; }
+        public string Street;
+        public string City;
 
-        public Adress(string street, string city)
+        public Adress(string type, string street, string city)
         {
-            this.street = street;
-            this.city = city;
+            Type = type;
+            Street = street;
+            City = city;
         }
     }
 }

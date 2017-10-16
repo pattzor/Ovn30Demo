@@ -60,8 +60,10 @@ namespace SqlLibrary
             return contacts;
         }
 
-        public void AddAddressToContact(int cid, Adress adress)
+        public int AddAddressToContact(int cid, Adress adress)
         {
+            int result = 0;
+
             SqlConnection sqlConnection = new SqlConnection();
 
             sqlConnection.ConnectionString = connString;
@@ -70,21 +72,32 @@ namespace SqlLibrary
             {
                 sqlConnection.Open();
 
-                SqlCommand sqlCommand = new SqlCommand();
+                SqlCommand sqlCommand = new SqlCommand("AddAddress", sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                sqlCommand.CommandText = "insert into Adress (Street, City) values (@street, @city)";
-
-                sqlCommand.Connection = sqlConnection;
+                SqlParameter paramType = new SqlParameter("@type", System.Data.SqlDbType.VarChar);
+                paramType.Value = adress.Type;
+                sqlCommand.Parameters.Add(paramType);
 
                 SqlParameter paramStreet = new SqlParameter("@street", System.Data.SqlDbType.VarChar);
-                paramStreet.Value = adress.street;
+                paramStreet.Value = adress.Street;
                 sqlCommand.Parameters.Add(paramStreet);
 
                 SqlParameter paramCity = new SqlParameter("@city", System.Data.SqlDbType.VarChar);
-                paramCity.Value = adress.city;
+                paramCity.Value = adress.City;
                 sqlCommand.Parameters.Add(paramCity);
 
+                SqlParameter paramCid = new SqlParameter("@cid", System.Data.SqlDbType.VarChar);
+                paramCid.Value = cid;
+                sqlCommand.Parameters.Add(paramCid);
+
+                SqlParameter paramAid = new SqlParameter("@aid", System.Data.SqlDbType.VarChar);
+                paramAid.Direction = System.Data.ParameterDirection.Output;
+                sqlCommand.Parameters.Add(paramAid);
+
                 sqlCommand.ExecuteNonQuery();
+
+                result = int.Parse(paramAid.Value.ToString());
             }
             catch (Exception ex)
             {
@@ -94,10 +107,14 @@ namespace SqlLibrary
             {
                 sqlConnection.Close();
             }
+
+            return result;
         }
 
-        public void CreateContact(Contact contact)
+        public int CreateContact(Contact contact)
         {
+            int result = 0;
+
             SqlConnection sqlConnection = new SqlConnection();
 
             sqlConnection.ConnectionString = connString;
@@ -106,11 +123,8 @@ namespace SqlLibrary
             {
                 sqlConnection.Open();
 
-                SqlCommand sqlCommand = new SqlCommand();
-
-                sqlCommand.CommandText = "insert into Contact (Firstname, Lastname, SSN) values (@firstname, @lastname, @ssn)";
-
-                sqlCommand.Connection = sqlConnection;
+                SqlCommand sqlCommand = new SqlCommand("AddContact", sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
                 SqlParameter paramFirstname = new SqlParameter("@firstname", System.Data.SqlDbType.VarChar);
                 paramFirstname.Value = contact.Firstname;
@@ -124,7 +138,13 @@ namespace SqlLibrary
                 paramSSN.Value = contact.SSN;
                 sqlCommand.Parameters.Add(paramSSN);
 
+                SqlParameter paramCID = new SqlParameter("@ssn", System.Data.SqlDbType.VarChar);
+                paramCID.Direction = System.Data.ParameterDirection.Output;
+                sqlCommand.Parameters.Add(paramCID);
+
                 sqlCommand.ExecuteNonQuery();
+
+                result = int.Parse(paramCID.Value.ToString());
             }
             catch (Exception ex)
             {
@@ -135,6 +155,7 @@ namespace SqlLibrary
                 sqlConnection.Close();
             }
 
+            return result;
         }
     }
 }

@@ -49,6 +49,7 @@
     <None Include="MussePigg.bak" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreateDatabaseMussePigg.sql" />
     <Content Include="HOWTO Restore database.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

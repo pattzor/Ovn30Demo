@@ -13,11 +13,7 @@ namespace Ovn30Demo
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                //listBoxContacts.Items.Add("This is a POstBack");
-            }
-            else
+            if (!IsPostBack)
             {
                 LoadContacts();
             }
@@ -60,8 +56,8 @@ namespace Ovn30Demo
                 }
                 catch (Exception ex)
                 {
-                    // Sparas till fil
-                    // TODO
+                    //TODO : Write to logfile
+                    throw ex;
                 }
             }
         }

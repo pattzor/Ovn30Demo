@@ -37,6 +37,7 @@ namespace Ovn30Demo
         {
             if (IsValid)
             {
+                string type = textBoxType.Text;
                 string street = textBoxStreet.Text;
                 string city = textBoxCity.Text;
 
@@ -44,7 +45,7 @@ namespace Ovn30Demo
 
                 int cid = int.Parse(dropDownListContacts.SelectedValue);
 
-                sqlStuff.AddAddressToContact(cid, new SqlLibrary.Adress(street, city));
+                sqlStuff.AddAddressToContact(cid, new SqlLibrary.Adress(type, street, city));
             }
         }
     }
