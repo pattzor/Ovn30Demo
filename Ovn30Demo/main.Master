@@ -9,6 +9,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
+    <asp:Literal ID="LiteralInfo" runat="server"></asp:Literal>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">

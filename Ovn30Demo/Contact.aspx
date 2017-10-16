@@ -16,5 +16,5 @@
         <label for="TextBoxSSN">Password:</label>
         <asp:TextBox ID="TextBoxSSN" runat="server"></asp:TextBox>
     </div>
-    <asp:Button ID="ButtonContact" runat="server" Text="Something" />
+    <asp:Button ID="ButtonContact" runat="server" Text="Something" OnClick="ButtonContact_Click" />
 </asp:Content>

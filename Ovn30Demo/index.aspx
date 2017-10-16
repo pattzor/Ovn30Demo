@@ -1,10 +1,5 @@
 ﻿
 <%@ Page MasterPageFile="~/main.Master" Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Ovn30Demo.index" %>
-
-<asp:Content ContentPlaceHolderID="head" runat="server">
-    <script>alert("I AM INDEX");</script>
-</asp:Content>
-
 <asp:Content ContentPlaceHolderID="main_content" runat="server">
     <div>
         <asp:ListBox ID="listBoxContacts" runat="server" AutoPostBack="True" Height="316px" Width="286px"></asp:ListBox>
