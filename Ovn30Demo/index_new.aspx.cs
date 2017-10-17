@@ -20,9 +20,7 @@ namespace Ovn30Demo
 
         private void LoadContacts()
         {
-            SQLStuff sqlStuff = new SQLStuff();
-
-            List<SqlLibrary.Contact> myContacts = sqlStuff.ReadAllContacts();
+            List<SqlLibrary.Contact> myContacts = SQLStuff.ReadAllContacts();
 
             foreach (var contact in myContacts)
             {

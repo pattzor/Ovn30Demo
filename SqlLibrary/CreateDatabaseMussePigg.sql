@@ -36,6 +36,16 @@ create table C2A
 )
 go
 
+create table [User]
+(
+  ID int identity(1,1) primary key not null, 
+  Username varchar(24) unique not null,
+  Password varchar(24) unique not null,
+  Role varchar(12) not null,
+  Email varchar(50) unique not null
+)
+go
+
 create procedure AddContact
   @Firstname varchar(max),
   @Lastname varchar(max),
@@ -88,3 +98,8 @@ execute AddAddress 'Home', 'Björkvägen 2', 'Norrköping', @cid, @aid output
 
 execute AddContact 'Nisse', 'Hult', '19960101-1234', @cid output
 execute AddAddress 'Home', 'Bokgatan 12', 'Nyköping', @cid, @aid output
+
+
+insert into [User] (Username, Password, Role, Email) values ('Academy', 'Password1', 'Admin', 'admin@academy.se') 
+insert into [User] (Username, Password, Role, Email) values ('Nisse', 'Password2', 'User', 'nisse@academy.se') 
+insert into [User] (Username, Password, Role, Email) values ('Anna', 'Password3', 'User', 'anna@academy.se') 

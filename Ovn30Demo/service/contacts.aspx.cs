@@ -15,17 +15,13 @@ namespace Ovn30Demo.service
         {
             if(Request["all"] != null)
             {
-                SQLStuff sqlStuff = new SQLStuff();
-
-                jsonLiteral.Text = JsonConvert.SerializeObject(sqlStuff.ReadAllContacts(), Formatting.Indented);
+                jsonLiteral.Text = JsonConvert.SerializeObject(SQLStuff.ReadAllContacts(), Formatting.Indented);
             }
             else if(Request["deleteCID"] != null)
             {
                 int cid = int.Parse(Request["deleteCID"].ToString());
 
-                SQLStuff sqlStuff = new SQLStuff();
-
-                int result = sqlStuff.DeleteContact(cid);
+                int result = SQLStuff.DeleteContact(cid);
 
                 if(result == 0)
                 {

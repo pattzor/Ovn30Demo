@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SqlLibrary;
 
 namespace Ovn30Demo
 {
@@ -21,9 +22,11 @@ namespace Ovn30Demo
                 string username = TextBoxUsername.Text;
                 string password = TextBoxPassword.Text;
 
-                if (username == "Academy" && password == "Password1")
+                User user = SQLStuff.ValidateLogin(username, password);
+
+                if (user != null)
                 {
-                    Session["username"] = username;
+                    Session["user"] = user;
                     Response.Redirect("/index.aspx");
                 }
                 else

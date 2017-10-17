@@ -20,9 +20,7 @@ namespace Ovn30Demo
 
         private void LoadContacts()
         {
-            SQLStuff sqlStuff = new SQLStuff();
-
-            List<SqlLibrary.Contact> myContacts = sqlStuff.ReadAllContacts();
+            List<SqlLibrary.Contact> myContacts = SQLStuff.ReadAllContacts();
 
             dropDownListContacts.Items.Clear();
 
@@ -41,11 +39,9 @@ namespace Ovn30Demo
                 string street = textBoxStreet.Text;
                 string city = textBoxCity.Text;
 
-                SQLStuff sqlStuff = new SQLStuff();
-
                 int cid = int.Parse(dropDownListContacts.SelectedValue);
 
-                sqlStuff.AddAddressToContact(cid, new SqlLibrary.Adress(type, street, city));
+                SQLStuff.AddAddressToContact(cid, new SqlLibrary.Adress(type, street, city));
             }
         }
     }

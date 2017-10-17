@@ -16,9 +16,7 @@ namespace Ovn30Demo
             {
                 int cid = int.Parse(Request["cid"]);
 
-                SQLStuff sqlStuff = new SQLStuff();
-
-                SqlLibrary.Contact contact = sqlStuff.ReadAllContacts().FirstOrDefault(x => x.ID == cid);
+                SqlLibrary.Contact contact = SQLStuff.ReadAllContacts().FirstOrDefault(x => x.ID == cid);
 
                 if (contact != null)
                 {

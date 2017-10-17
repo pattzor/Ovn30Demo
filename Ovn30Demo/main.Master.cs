@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SqlLibrary;
 
 namespace Ovn30Demo
 {
@@ -11,17 +12,21 @@ namespace Ovn30Demo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request["logout"] != null)
+            if (Request["logout"] != null)
             {
-                Session["username"] = null;
+                Session["user"] = null;
             }
 
-            if (Session["username"] == null)
+            if (Session["user"] == null)
+            {
                 Response.Redirect("/login.aspx");
+            }
             else
             {
-                HyperLinkAccount.Text = "<span class=\"glyphicon glyphicon-user\">&nbsp;" + Session["username"] + "</span>";
-                HyperLinkAccount.ToolTip = "Logged in as " + Session["username"];
+                User user = (User)Session["user"];
+
+                HyperLinkAccount.Text = "<span class=\"glyphicon glyphicon-user\">&nbsp;" + user.Username + "</span>";
+                HyperLinkAccount.ToolTip = "Logged in as " + user.Username;
                 HyperLinkAccount.NavigateUrl = "#";
             }
         }

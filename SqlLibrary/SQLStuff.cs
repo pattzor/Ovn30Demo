@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SqlLibrary
 {
-    public class SQLStuff
+    public static class SQLStuff
     {
-        private string connString = @"Data Source=.;Initial Catalog=MussePigg;Integrated Security=True";
+        private static string connString = @"Data Source=.;Initial Catalog=MussePigg;Integrated Security=True";
 
         /// <summary>
         /// Reads all contacts from model and returns in a List<Contact>
@@ -17,7 +17,7 @@ namespace SqlLibrary
         /// Throws all kinds of Exceptions if the model is weird
         /// </summary>
         /// <returns>List<Contact></returns>
-        public List<Contact> ReadAllContacts()
+        public static List<Contact> ReadAllContacts()
         {
             List<Contact> contacts = new List<Contact>();
 
@@ -60,7 +60,7 @@ namespace SqlLibrary
             return contacts;
         }
 
-        public int AddAddressToContact(int cid, Adress adress)
+        public static int AddAddressToContact(int cid, Adress adress)
         {
             int result = 0;
 
@@ -111,7 +111,7 @@ namespace SqlLibrary
             return result;
         }
 
-        public int DeleteContact(int cid)
+        public static int DeleteContact(int cid)
         {
             int result = 0;
 
@@ -143,7 +143,8 @@ namespace SqlLibrary
 
             return result;
         }
-        public int CreateContact(Contact contact)
+
+        public static int CreateContact(Contact contact)
         {
             int result = 0;
 
@@ -188,6 +189,56 @@ namespace SqlLibrary
             }
 
             return result;
+        }
+
+        public static User ValidateLogin(string username, string password)
+        {
+            User user = null;
+
+            SqlConnection sqlConnection = new SqlConnection();
+
+            sqlConnection.ConnectionString = connString;
+
+            try
+            {
+                sqlConnection.Open();
+
+                string sqlQuery = "select * from [User] where Username=@username and Password=@password";
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
+
+                SqlParameter paramUsername = new SqlParameter("@username", System.Data.SqlDbType.VarChar);
+                paramUsername.Value = username;
+                sqlCommand.Parameters.Add(paramUsername);
+
+                SqlParameter paramPassword = new SqlParameter("@password", System.Data.SqlDbType.VarChar);
+                paramPassword.Value = password;
+                sqlCommand.Parameters.Add(paramPassword);
+
+                SqlDataReader sqlDataReader =  sqlCommand.ExecuteReader();
+
+                if(sqlDataReader.HasRows)
+                {
+                    sqlDataReader.Read();
+
+                    int id = int.Parse(sqlDataReader["ID"].ToString());
+                    string firstname = sqlDataReader["Username"].ToString();
+                    string lastname = sqlDataReader["Password"].ToString();
+                    string email = sqlDataReader["Email"].ToString();
+                    string role = sqlDataReader["Role"].ToString();
+
+                    user = new User(id, firstname, lastname, role, email);
+                }                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+            return user;
         }
     }
 }

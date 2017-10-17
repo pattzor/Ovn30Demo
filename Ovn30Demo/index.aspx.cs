@@ -21,9 +21,7 @@ namespace Ovn30Demo
 
         private void LoadContacts()
         {
-            SQLStuff sqlStuff = new SQLStuff();
-
-            List<SqlLibrary.Contact> myContacts = sqlStuff.ReadAllContacts();
+            List<SqlLibrary.Contact> myContacts = SQLStuff.ReadAllContacts();
 
             listBoxContacts.Items.Clear();
 
@@ -42,11 +40,9 @@ namespace Ovn30Demo
                 string lastName = textBoxLastname.Text;
                 string ssn = textBoxSSN.Text;
 
-                SQLStuff sqlStuff = new SQLStuff();
-
                 try
                 {
-                    sqlStuff.CreateContact(new SqlLibrary.Contact(firstName, lastName, ssn));
+                    SQLStuff.CreateContact(new SqlLibrary.Contact(firstName, lastName, ssn));
 
                     textBoxFirstname.Text = "";
                     textBoxLastname.Text = "";
