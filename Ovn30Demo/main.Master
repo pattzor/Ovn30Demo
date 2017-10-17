@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="Ovn30Demo.main" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -9,8 +10,13 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
+    <div class="container">
+        <div class="page-header" style="text-align: center; align-content: center;">
+            <h1>The Contactlist</h1>
+        </div>
+    </div>
     <asp:Literal ID="LiteralInfo" runat="server"></asp:Literal>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">WebSiteName</a>
@@ -22,6 +28,13 @@
                 <li><a href="ajax.aspx">AJAX with Table</a></li>
                 <li><a href="ajax_div.aspx">AJAX with DIV</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><asp:HyperLink ID="HyperLinkAccount" runat="server"></asp:HyperLink></li>
+                <li><a href="/index.aspx?logout=true"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+            </ul>
+            <div style="float: right; padding: 15px;">
+                
+            </div>
         </div>
     </nav>
     <form id="form1" method="get" runat="server">

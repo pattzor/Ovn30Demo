@@ -80,6 +80,7 @@
     <Content Include="index_new.aspx" />
     <Content Include="javascript\myJavaScript.js" />
     <Content Include="javascript\myJavaScriptDIV.js" />
+    <Content Include="login.aspx" />
     <Content Include="main.Master" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -157,6 +158,13 @@
     </Compile>
     <Compile Include="index_new.aspx.designer.cs">
       <DependentUpon>index_new.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="main.Master.cs">
       <DependentUpon>main.Master</DependentUpon>

@@ -11,6 +11,19 @@ namespace Ovn30Demo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request["logout"] != null)
+            {
+                Session["username"] = null;
+            }
+
+            if (Session["username"] == null)
+                Response.Redirect("/login.aspx");
+            else
+            {
+                HyperLinkAccount.Text = "<span class=\"glyphicon glyphicon-user\">&nbsp;" + Session["username"] + "</span>";
+                HyperLinkAccount.ToolTip = "Logged in as " + Session["username"];
+                HyperLinkAccount.NavigateUrl = "#";
+            }
         }
     }
 }

@@ -33,6 +33,8 @@ function DeleteContact(cid) {
         done(function (data) {
 
             if (data.trim() == "ok") {
+
+                // Not calling LoadAllContacts here. This will save a postback.
                 $("#myDivRow" + cid).fadeOut();
                 $("#myDivRow" + cid).remove();
                 $(".myDivTableRow:even").css("background-color", "#D0E4F5");
